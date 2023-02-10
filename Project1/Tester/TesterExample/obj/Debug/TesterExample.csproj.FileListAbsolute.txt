@@ -1,7 +1,0 @@
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\bin\Debug\TesterExample.exe
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\bin\Debug\TesterExample.pdb
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.csproj.AssemblyReference.cache
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.csproj.SuggestedBindingRedirects.cache
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.csproj.CoreCompileInputs.cache
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.exe
-C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.pdb
