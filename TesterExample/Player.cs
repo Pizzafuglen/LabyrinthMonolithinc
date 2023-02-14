@@ -25,7 +25,7 @@ namespace TesterExample
                 {
                     if (this.playerX >= 0)
                     {
-                        if (field[this.playerX, this.playerY] == 0)
+                        if (field[this.playerX - 1, this.playerY] == 0)
                         {
                             this.playerX -= 1;
                         }
@@ -39,7 +39,7 @@ namespace TesterExample
                 {
                     if (this.playerX >= 0)
                     {
-                        if (field[this.playerX, this.playerY] == 0)
+                        if (field[this.playerX + 1, this.playerY] == 0)
                         {
                             this.playerX += 1;
                         }
@@ -53,7 +53,7 @@ namespace TesterExample
                 {
                     if (this.playerY >= 0)
                     {
-                        if (field[this.playerX, this.playerY] == 0)
+                        if (field[this.playerX, this.playerY - 1] == 0)
                         {
                             this.playerY -= 1;
                         }
@@ -67,7 +67,7 @@ namespace TesterExample
                 {
                     if (this.playerY >= 0)
                     {
-                        if (field[this.playerX, this.playerY] == 0)
+                        if (field[this.playerX, this.playerY + 1] == 0)
                         {
                             this.playerY += 1;
                         }

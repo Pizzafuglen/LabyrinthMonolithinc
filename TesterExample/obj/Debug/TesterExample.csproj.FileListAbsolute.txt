@@ -5,3 +5,10 @@ C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Deb
 C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.csproj.CoreCompileInputs.cache
 C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.exe
 C:\Users\Primal One\Desktop\RandomProjects\Project1\Tester\TesterExample\obj\Debug\TesterExample.pdb
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\bin\Debug\TesterExample.exe
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\bin\Debug\TesterExample.pdb
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\obj\Debug\TesterExample.csproj.AssemblyReference.cache
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\obj\Debug\TesterExample.csproj.SuggestedBindingRedirects.cache
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\obj\Debug\TesterExample.csproj.CoreCompileInputs.cache
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\obj\Debug\TesterExample.exe
+C:\Users\chris\OneDrive\Skrivebord\RandomProjects\LabyrinthMonolithinc\TesterExample\obj\Debug\TesterExample.pdb
