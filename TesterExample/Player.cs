@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+
 namespace TesterExample
 {
     public class Player
@@ -8,13 +10,16 @@ namespace TesterExample
 
         private bool winCon;
 
-        public Player(int playerX, int playerY, bool winCon)
+        private int[,] field;
+
+        public Player(int playerX, int playerY, bool winCon, int[,] field)
         {
             this.playerX = playerX;
             this.playerY = playerY;
             this.winCon = winCon;
+            this.field = field;
         }
-        public void HandleMovement(int[,] field)
+        public void HandleMovement()
         {
             this.winCon = false;
             while (this.winCon != true)
@@ -23,53 +28,101 @@ namespace TesterExample
 
                 if (input.Equals("w"))
                 {
-                    if (this.playerX >= 0)
+                    if (this.playerX >= 0 && this.field[this.playerX - 1, this.playerY] != null)
                     {
-                        if (field[this.playerX - 1, this.playerY] == 0)
+                        if (this.field[this.playerX - 1, this.playerY] == 0)
                         {
                             this.playerX -= 1;
+                            field[this.playerX + 1 , this.playerY] = 0;
+                        }
+                        else if (this.field[this.playerX - 1, this.playerY] == 2)
+                        {
+                            this.playerX -= 1;
+                            field[this.playerX + 1 , this.playerY] = 0;
+                            Console.WriteLine("You have won!");
+                            this.winCon = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("This is out of bounds");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("This is not a valid input");
+                        Console.WriteLine("This is out of bounds");
                     }
                 }
                 else if (input.Equals("s"))
                 {
-                    if (this.playerX >= 0)
+                    if (this.playerX >= 0 && this.field[this.playerX + 1, this.playerY] != null)
                     {
-                        if (field[this.playerX + 1, this.playerY] == 0)
+                        if (this.field[this.playerX + 1, this.playerY] == 0)
                         {
                             this.playerX += 1;
+                            field[this.playerX - 1, this.playerY] = 0;
+                        }
+                        else if (this.field[this.playerX + 1, this.playerY] == 2)
+                        {
+                            this.playerX += 1;
+                            field[this.playerX - 1 , this.playerY] = 0;
+                            Console.WriteLine("You have won!");
+                            this.winCon = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("This is out of bounds");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("This is not a valid input");
+                        Console.WriteLine("This is out of bounds");
                     }
                 }
                 else if (input.Equals("a"))
                 {
-                    if (this.playerY >= 0)
+                    if (this.playerY >= 0 && this.field[this.playerX, this.playerY - 1] != null)
                     {
-                        if (field[this.playerX, this.playerY - 1] == 0)
+                        if (this.field[this.playerX, this.playerY - 1] == 0)
                         {
                             this.playerY -= 1;
+                            field[this.playerX, this.playerY + 1] = 0;
+                        }
+                        else if (this.field[this.playerX, this.playerY  - 1] == 2)
+                        {
+                            this.playerY -= 1;
+                            field[this.playerX , this.playerY + 1] = 0;
+                            Console.WriteLine("You have won!");
+                            this.winCon = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("This is out of bounds");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("This is not a valid input");
+                        Console.WriteLine("This is out of bounds");
                     }
                 }
                 else if (input.Equals("d"))
                 {
-                    if (this.playerY >= 0)
+                    if (this.playerY >= 0 && this.field[this.playerX, this.playerY + 1] != null)
                     {
-                        if (field[this.playerX, this.playerY + 1] == 0)
+                        if (this.field[this.playerX, this.playerY + 1] == 0)
                         {
                             this.playerY += 1;
+                            field[this.playerX, this.playerY - 1] = 0;
+                        }
+                        else if (this.field[this.playerX, this.playerY  + 1] == 2)
+                        {
+                            this.playerY += 1;
+                            field[this.playerX , this.playerY - 1] = 0;
+                            Console.WriteLine("You have won!");
+                            this.winCon = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("This is out of bounds");
                         }
                     }
                     else
@@ -78,21 +131,30 @@ namespace TesterExample
                     }
                 }
 
-                Console.WriteLine("playerX: " + this.playerY + " playerY: " + this.playerX);
-                if (field[this.playerX,this.playerY] == 2)
+                //Console.WriteLine("playerX: " + this.playerY + " playerY: " + this.playerX);
+                ShowFieldPlayer();
+                if (this.field[this.playerX,this.playerY] == 2)
                 {
                     Console.WriteLine("You have won!");
                     this.winCon = true;
                 }
             }
         }
-        public static void ShowField(int[,] field)
+        public void ShowFieldPlayer()
         {
-            for (int i = 0; i < field.GetLength(0); i++)
+            for (int i = 0; i < this.field.GetLength(0); i++)
             {
-                for (int j = 0; j < field.GetLength(1); j++)
+                for (int j = 0; j < this.field.GetLength(1); j++)
                 {
-                    Console.Write(field[i,j]);
+                    if (field[this.playerX, this.playerY] != field[i,j])
+                    {
+                        Console.Write(field[i,j] + " ");
+                    }
+                    else
+                    {
+                        field[this.playerX, this.playerY] = 9;
+                        Console.Write(field[i,j] + " ");
+                    }
                 }
                 Console.WriteLine();
             }
