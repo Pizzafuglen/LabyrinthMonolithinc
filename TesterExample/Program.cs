@@ -25,8 +25,7 @@ namespace TesterExample
 
             Player player1 = new Player(0, 1, false, field);
             Field field1 = new Field(field);
-
-            field1.ShowFieldFull();
+            
             player1.HandleMovement();
         }
     }

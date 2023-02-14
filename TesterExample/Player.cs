@@ -22,6 +22,7 @@ namespace TesterExample
         public void HandleMovement()
         {
             this.winCon = false;
+            ShowFieldPlayer();
             while (this.winCon != true)
             {
                 string input = Console.ReadLine();
@@ -51,6 +52,7 @@ namespace TesterExample
                     {
                         Console.WriteLine("This is out of bounds");
                     }
+                    Console.Clear();
                 }
                 else if (input.Equals("s"))
                 {
@@ -77,6 +79,7 @@ namespace TesterExample
                     {
                         Console.WriteLine("This is out of bounds");
                     }
+                    Console.Clear();
                 }
                 else if (input.Equals("a"))
                 {
@@ -103,6 +106,7 @@ namespace TesterExample
                     {
                         Console.WriteLine("This is out of bounds");
                     }
+                    Console.Clear();
                 }
                 else if (input.Equals("d"))
                 {
@@ -113,7 +117,7 @@ namespace TesterExample
                             this.playerY += 1;
                             field[this.playerX, this.playerY - 1] = 0;
                         }
-                        else if (this.field[this.playerX, this.playerY  + 1] == 2)
+                        else if (this.field[this.playerX, this.playerY + 1] == 2)
                         {
                             this.playerY += 1;
                             field[this.playerX , this.playerY - 1] = 0;
@@ -129,18 +133,18 @@ namespace TesterExample
                     {
                         Console.WriteLine("This is out of bounds");
                     }
+                    Console.Clear();
                 }
 
                 //Console.WriteLine("playerX: " + this.playerY + " playerY: " + this.playerX);
                 ShowFieldPlayer();
-                if (this.field[this.playerX,this.playerY] == 2)
+                if (winCon)
                 {
                     Console.WriteLine("You have won!");
-                    this.winCon = true;
                 }
             }
         }
-        public void ShowFieldPlayer()
+        private void ShowFieldPlayer()
         {
             for (int i = 0; i < this.field.GetLength(0); i++)
             {
